@@ -1,4 +1,4 @@
-import Tableno from "./Tableno.jsx";
+import Tableno from "./tableno";
 
 export default function Table() {
   const OArray = [

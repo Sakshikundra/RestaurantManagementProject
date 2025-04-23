@@ -1,5 +1,5 @@
 import Order from "./Order";
-import Table from "./Table";
+import Table from "./table";
 
 export default function Dashboard() {
   return (
@@ -15,7 +15,7 @@ export default function Dashboard() {
           <Order name="Krishna" amount="₹180" table="3" />
         </div>
         <div>
-          <Table />
+          <Table/>
         </div>
       </div>
     </div>
