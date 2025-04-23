@@ -1,4 +1,4 @@
-import PayoutCard from "./PayoutCard";
+import PayoutCard from "./payoutcard";
 import Image from "./Profile.jpg";
 
 export default function payout() {
