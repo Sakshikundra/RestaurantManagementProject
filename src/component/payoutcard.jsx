@@ -1,47 +1,47 @@
 import React from "react";
+
 export default function PayoutCard({ user }) {
   return (
-    
-    <div className="flex flex-col  items-start items-center gap-4 h3-4 border-b border-2">
-        <table>
-        <tr className="border-b border-none ">
-      <td className="p-4 border-2">
+    <div className="flex flex-col lg:flex-row items-start gap-6 bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out mb-6">
+      <div className="flex-shrink-0">
         <img
           src={user.image}
-          className="w-16 h-16 rounded-md "
+          alt={user.name}
+          className="w-20 h-20 rounded-full border-2 border-gray-300"
         />
-      </td>
-      <td className="p-4 border-2 text-sm">
-        <p className="font-semibold">Name: {user.name}</p>
-        <p className="font-semibold">ID: {user.id}</p>
-        <p className="font-semibold">Mobile: {user.mobile}</p>
-        <p className="font-semibold">Role: {user.role}</p>
-      </td>
-      <td className="p-4 border-2 text-sm">
-        <p className="font-semibold">Account Holder: {user.accountHolder}</p>
-        <p className="font-semibold">Account No.: {user.accountNumber}</p>
-        <p className="font-semibold">IFSC: {user.ifsc}</p>
-        <p className="font-semibold">Branch: {user.branch}</p>
-      </td>
-      <td className="p-4 border-2 text-sm">
-        <p className="font-semibold">Amount: ₹{user.amount}</p>
-        <p className="font-semibold">
-          Status:
-          <span
-            className={
-              user.status == "PAID" ? "text-lime-600" : "text-red-500"
-            }
-          >
-            {user.status}
-          </span>
-        </p>
-      </td>
-    </tr>
-        
-        </table>
-      
-        
       </div>
 
+      <div className="flex-grow">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+          <div className="flex flex-col flex-grow">
+            <p className="font-semibold text-lg text-gray-700">Name: {user.name}</p>
+            <p className="text-sm text-gray-600">ID: {user.id}</p>
+            <p className="text-sm text-gray-600">Mobile: {user.mobile}</p>
+            <p className="text-sm text-gray-600">Role: {user.role}</p>
+          </div>
+
+          <div className="flex flex-col flex-grow">
+            <p className="font-semibold text-lg text-gray-700">Account Holder: {user.accountHolder}</p>
+            <p className="text-sm text-gray-600">Account No.: {user.accountNumber}</p>
+            <p className="text-sm text-gray-600">IFSC: {user.ifsc}</p>
+            <p className="text-sm text-gray-600">Branch: {user.branch}</p>
+          </div>
+
+          <div className="flex flex-col justify-between">
+            <p className="font-semibold text-lg text-gray-700">Amount: ₹{user.amount}</p>
+            <p className="font-semibold text-sm text-gray-600">
+              Status: 
+              <span
+                className={
+                  user.status === "PAID" ? "text-lime-600" : "text-red-600"
+                }
+              >
+                {user.status}
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1,6 +1,5 @@
-
 import PayoutCard from "./PayoutCard";
-import Image from "./Profile.jpg"; 
+import Image from "./Profile.jpg";
 
 export default function Payout() {
   const payoutsData = [
@@ -119,24 +118,24 @@ export default function Payout() {
   ];
 
   return (
-    <div className="bg-slate-300 min-h-screen px-[4rem] py-6">
-      <h1 className="font-semibold text-xl mb-4">Payout Details</h1>
+    <div className="bg-gray-100 min-h-screen px-8 py-6">
+      <h1 className="font-semibold text-3xl mb-6 text-gray-800">Payout Details</h1>
 
       <div className="bg-white rounded-xl shadow-md p-6 space-y-4">
-        <div className="flex gap-4 mb-4">
-          <button className=" text-gray-700 px-4 py-2 rounded-md hover:bg-[#FA9F1B] hover:text-white transition">
+        <div className="flex gap-4 mb-6">
+          <button className="text-gray-700 px-6 py-3 rounded-lg hover:bg-[#FA9F1B] hover:text-white transition duration-300 ease-in-out">
             All
           </button>
-          <button className= "text-gray-700 px-4 py-2 rounded-md hover:bg-[#FA9F1B] hover:text-white transition">
+          <button className="text-gray-700 px-6 py-3 rounded-lg hover:bg-[#FA9F1B] hover:text-white transition duration-300 ease-in-out">
             Paid
           </button>
-          <button className=" text-gray-700 px-4 py-2 rounded-md hover:bg-[#FA9F1B] hover:text-white transition">
+          <button className="text-gray-700 px-6 py-3 rounded-lg hover:bg-[#FA9F1B] hover:text-white transition duration-300 ease-in-out">
             Unpaid
           </button>
         </div>
 
         {payoutsData.map((user, index) => (
-          <PayoutCard  user={user} />
+          <PayoutCard key={index} user={user} />
         ))}
       </div>
     </div>

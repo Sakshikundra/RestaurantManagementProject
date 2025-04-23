@@ -41,22 +41,22 @@ export default function MiniCalendar() {
     <div className="relative w-fit">
       <button
         onClick={() => setShowCalendar(!showCalendar)}
-        className="flex items-center gap-2 px-4 py-2 rounded-md bg-white shadow hover:shadow-md transition-all border"
+        className="flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg hover:shadow-2xl transition-all duration-300"
       >
-        <span className="text-gray-800 text-sm font-medium">
+        <span className="text-lg font-medium">
           {selectedDate ? selectedDate.toLocaleDateString() : "Select Date"}
         </span>
-        <AiOutlineCalendar className="text-xl text-blue-600" />
+        <AiOutlineCalendar className="text-2xl" />
       </button>
 
       {showCalendar && (
-        <div className="absolute mt-2 bg-white p-4 rounded-xl shadow-lg z-20 w-[17rem] border border-gray-200">
+        <div className="absolute mt-3 bg-white p-4 rounded-3xl shadow-xl z-20 w-[20rem] border border-gray-200">
           {/* Month & Year Selectors */}
-          <div className="flex justify-between mb-2">
+          <div className="flex justify-between mb-4 items-center">
             <select
               value={month}
               onChange={handleMonthChange}
-              className="text-sm border rounded px-2 py-1"
+              className="text-sm bg-gray-50 text-gray-800 border-2 rounded-lg px-3 py-1.5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               {Array.from({ length: 12 }, (_, i) => (
                 <option key={i} value={i}>
@@ -67,7 +67,7 @@ export default function MiniCalendar() {
             <select
               value={year}
               onChange={handleYearChange}
-              className="text-sm border rounded px-2 py-1"
+              className="text-sm bg-gray-50 text-gray-800 border-2 rounded-lg px-3 py-1.5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               {Array.from({ length: 10 }, (_, i) => year - 5 + i).map((yr) => (
                 <option key={yr} value={yr}>
@@ -78,28 +78,27 @@ export default function MiniCalendar() {
           </div>
 
           {/* Weekdays */}
-          <div className="grid grid-cols-7 text-xs font-medium text-gray-500 mb-1">
+          <div className="grid grid-cols-7 text-xs font-medium text-gray-600 mb-2">
             {weekdays.map((day) => (
-              <div key={day} className="text-center">
+              <div key={day} className="text-center text-gray-500 font-semibold">
                 {day}
               </div>
             ))}
           </div>
 
           {/* Calendar Days */}
-          <div className="grid grid-cols-7 text-sm gap-1">
+          <div className="grid grid-cols-7 gap-2 text-center">
             {calendarDays.map((day, index) => (
               <div
                 key={index}
                 onClick={() => day && handleDateClick(day)}
-                className={`h-8 w-8 flex items-center justify-center rounded-md cursor-pointer 
-                ${
-                  selectedDate?.getDate() === day &&
+                className={`h-10 w-10 flex items-center justify-center rounded-lg cursor-pointer transition-all duration-200 
+                  ${day ? "text-gray-800 hover:bg-indigo-100" : "text-transparent"} 
+                  ${selectedDate?.getDate() === day &&
                   selectedDate?.getMonth() === month &&
                   selectedDate?.getFullYear() === year
-                    ? "bg-blue-600 text-white"
-                    : "hover:bg-blue-100 text-gray-800"
-                }`}
+                    ? "bg-indigo-600 text-white font-semibold" 
+                    : ""}`}
               >
                 {day || ""}
               </div>
