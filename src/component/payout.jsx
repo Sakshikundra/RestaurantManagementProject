@@ -1,7 +1,7 @@
 import PayoutCard from "./PayoutCard";
 import Image from "./Profile.jpg";
 
-export default function Payout() {
+export default function payout() {
   const payoutsData = [
     {
       name: "Ramesh Roy",

@@ -1,6 +1,6 @@
 import Header from "./component/header";
 import Dashboard from "./component/dashboard";
-import Payout from "./component/Payout";
+import payout from "./component/payout";
 import Attendance from "./component/Attendance";
 import Member from "./component/Member";
 import Report from "./component/Report";
