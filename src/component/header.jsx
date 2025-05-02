@@ -53,16 +53,7 @@ export default function Header() {
         >
           Inventory
         </NavLink>
-        <NavLink
-          to="/report"
-          className={({ isActive }) =>
-            isActive
-              ? "px-4 py-2 bg-[#9FCC2E] text-white rounded-full shadow-md transition-all duration-300"
-              : "px-4 py-2 rounded-full hover:bg-[#f3f3f3] transition-all duration-200"
-          }
-        >
-          Reports
-        </NavLink>
+       
         <NavLink
           to="/member"
           className={({ isActive }) =>

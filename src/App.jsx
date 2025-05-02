@@ -3,7 +3,7 @@ import Dashboard from "./component/dashboard";
 import Attendance from "./component/Attendance";
 import Payout from "./component/payout";
 import Member from "./component/Member";
-import Report from "./component/Report";
+
 import Inventory from "./component/Inventory";
 import Force from "./component/force";
 import { BrowserRouter as Router, Routes, Route
