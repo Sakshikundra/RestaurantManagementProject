@@ -5,7 +5,10 @@ import Payout from "./component/payout";
 import Member from "./component/Member";
 import Report from "./component/Report";
 import Inventory from "./component/Inventory";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Force from "./component/force";
+import { BrowserRouter as Router, Routes, Route
+
+ } from "react-router-dom";
 export default function App() {
   return (
     <>
@@ -13,6 +16,7 @@ export default function App() {
       <Router>
       <Header />
         <Routes>
+          <Route path="/" index element={<Force />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/payout" element={<Payout />} />
           <Route path="/attendance" element={<Attendance />} />
